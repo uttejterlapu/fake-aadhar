@@ -9,6 +9,7 @@ This project is an Express.js application that provides an API for managing Aadh
 - [Aadhaar API Documentation](#aadhaar-api-documentation)
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
+  - [POSTMAN](#postman)
   - [Installation](#installation)
   - [Environment Variables](#environment-variables)
   - [API Endpoints](#api-endpoints)
@@ -17,6 +18,16 @@ This project is an Express.js application that provides an API for managing Aadh
     - [Example Request](#example-request)
   - [Usage](#usage)
   - [License](#license)
+
+## POSTMAN
+```markdown
+[Postman Collection](https://elements.getpostman.com/redirect?entityId=32748975-c5aab376-78a7-40af-8a05-1e14caa43104&entityType=collection)
+```
+
+[Postman Collection](https://elements.getpostman.com/redirect?entityId=32748975-c5aab376-78a7-40af-8a05-1e14caa43104&entityType=collection)
+
+Citations:
+[1] https://elements.getpostman.com/redirect?entityId=32748975-c5aab376-78a7-40af-8a05-1e14caa43104&entityType=collection
 
 ## Installation
 
