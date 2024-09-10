@@ -6,10 +6,10 @@ const apiKeyInUrl = require('../middleware/apiKeyInUrl');
 
 router.use(apiKeyInUrl);
 
-router.get('/all',aadhaarController.getAll);
 router.post('/', aadhaarController.createAadhaar);
+router.get('/all',aadhaarController.getAllAadhaar);
 router.get('/:aadhaarNumber', aadhaarController.getAadhaar);
-// router.put('/:aadhaarNumber', updateAadhaar);
 router.delete('/:aadhaarNumber', aadhaarController.deleteAadhaar);
 
 module.exports = router;
+// router.put('/:aadhaarNumber', updateAadhaar);

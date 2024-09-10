@@ -20,16 +20,21 @@ const aadhaarSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
-  firstname: {
+  firstName: {
     type: String,
     required: true,
   },
-  lastname: {
+  lastName: {
     type: String,
     required: true,
   },
-  middlename: {
+  middleName: {
     type: String,
+  },
+  gender: {
+    type: String,
+    required: true,
+    enum: ['MALE', 'FEMALE'],
   },
   dateOfBirth: {
     type: Date,
@@ -39,14 +44,22 @@ const aadhaarSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  fathername: {
+  fatherName: {
     type: String,
     required: true,
   },
-  mothername: {
+  motherName: {
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  phoneNumber:{
+    type: String,
+    required: true,
+  }
 });
 
 // Pre-save hook to generate Aadhaar number
