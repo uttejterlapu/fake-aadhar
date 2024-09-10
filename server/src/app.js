@@ -15,5 +15,7 @@ app.use(express.json());
 
 app.use('/api/aadhaar', require('./routes/aadhaar'));
 app.use('/api/auth', require('./routes/user'));
-
-module.exports = app;  
+app.get('/', async(req,res)=>{
+    res.send('Hiii')
+})
+module.exports = app;
