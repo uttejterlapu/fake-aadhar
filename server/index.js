@@ -1,5 +1,5 @@
 // index.js
-const app = require('./app');
+const app = require('./src/app');
 const { PORT } = process.env;
 
 app.listen(PORT, () => {
