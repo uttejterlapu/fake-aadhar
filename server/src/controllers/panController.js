@@ -100,7 +100,7 @@ module.exports.deletePan = async (req, res) => {
 
 module.exports.getAllPan = async (req, res) => {
     try {
-        const panRecords = await Pan.find();
+        const panRecords = await Pan.find().select('-_id -__v');
 
         if (!panRecords.length) {
             return res.status(404).json({ message: 'No Pan records found' });

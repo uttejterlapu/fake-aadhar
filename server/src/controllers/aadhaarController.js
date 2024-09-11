@@ -86,7 +86,7 @@ module.exports.deleteAadhaar = async (req, res) => {
 
 module.exports.getAllAadhaar = async (req, res) => {
     try {
-        const aadhaarRecords = await Aadhaar.find();
+        const aadhaarRecords = await Aadhaar.find().select('-_id -__v');
 
         if (!aadhaarRecords.length) {
             return res.status(404).json({ message: 'No Aadhaar records found' });
