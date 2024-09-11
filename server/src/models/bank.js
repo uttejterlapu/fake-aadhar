@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
 
-// Helper function to generate a 16-digit Aadhaar number
-const generateAadhaarNumber = async () => {
-    let aadhaarNumber;
-    let exists = true;
-
-    while (exists) {
-        aadhaarNumber = Math.floor(1000000000000000 + Math.random() * 9000000000000000).toString();
-        const existingAadhaar = await Aadhaar.findOne({ aadhaarNumber });
-        if (!existingAadhaar) {
-            exists = false;
-        }
-    }
-    return aadhaarNumber;
-};
-
-const aadhaarSchema = new mongoose.Schema({
+const bankSchema = new mongoose.Schema({
+    bankAccountNumber:{
+        type: String,
+        unique: true,
+    },
+    IFSRCNumber:{
+        type: String,
+    },
+    bankName:{
+        type: String,
+        required: true,
+    },
     aadhaarNumber: {
+        type: String,
+        unique: true,
+    },
+    panNumber:{
         type: String,
         unique: true,
     },
@@ -59,17 +59,8 @@ const aadhaarSchema = new mongoose.Schema({
     phoneNumber: {
         type: String,
         required: true,
-    }
+    },
+
 });
 
-// Pre-save hook to generate Aadhaar number
-aadhaarSchema.pre('save', async function (next) {
-    if (!this.aadhaarNumber) {
-        this.aadhaarNumber = await generateAadhaarNumber();
-    }
-    next();
-});
-
-const Aadhaar = mongoose.model('Aadhaar', aadhaarSchema);
-
-module.exports = Aadhaar;
+const Bank = mongoose.model('Bank', bankSchema);

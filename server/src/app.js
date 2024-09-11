@@ -16,6 +16,7 @@ app.use(express.json());
 app.use('/api/aadhaar', require('./routes/aadhaar'));
 app.use('/api/pan', require('./routes/pan'));
 app.use('/api/auth', require('./routes/user'));
+app.use('/api/digilocker', require('./routes/digiLocker'));
 app.get('/', async(req,res)=>{
     res.send('Hiii')
 })
