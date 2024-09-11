@@ -91,7 +91,7 @@ module.exports.getAllAadhaar = async (req, res) => {
         if (!aadhaarRecords.length) {
             return res.status(404).json({ message: 'No Aadhaar records found' });
         }
-        res.status(200).json({ message: 'Fetched successfully', data: aadhaarRecords });
+        res.status(200).json(aadhaarRecords);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
